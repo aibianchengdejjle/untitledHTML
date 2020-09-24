@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+        css 浮动  添加了浮动流之后 他不在正常的文档流中占位置 也就是 下面的色块依次向上移动 然后下面的色块被
+        浮动的色块所覆盖
+        clear属性 清楚浮动
+            both 两边都不允许浮动
+            left  左边不允许
+            right 右边不允许
+        float 属性
+        left
+        right
+        流式布局
+ -->
+        <div style="float:left;width: 200px ;height: 200px; background-color: red">1</div>
+        <div style="clear: both"></div>
+        <div style="width: 200px ;height: 200px; background-color: black">1</div>
+        <div style="width: 200px ;height: 200px; background-color: aqua">1</div>
+        <div style="width: 200px ;height: 200px; background-color: chocolate">1</div>
+
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function init() {
+            //获得表格
+            var tb=document.getElementById("tb");
+            //得到每一行
+            var row=tb.rows;
+            //遍历所有的行，然后根据奇数偶数变换
+            for (var i=1;i<row.length;i++)
+            {
+                if(i%2==0)
+                {
+                   row[i].bgColor="blue";
+                }
+                else {
+                    row[i].bgColor="black";
+                }
+            }
+        }
+    /*
+    *       全选和全不选
+    *
+    *
+    * */
+    function clickall() {
+        var check=document.getElementById("box1");
+        var checked=check.checked;
+        var checks=document.getElementsByName("check")
+        for(var i=1;i<checks.length;i++)
+        {
+            var x=checks[i];
+            x.checked=checked;
+        }
+    }
+    </script>
+</head>
+<body onload="init()">
+        <table border="1px" width="600px" id="tb">
+            <tr>
+                <td >
+                    <input type="checkbox" onclick="clickall()" id="box1" name="check">
+                </td>
+                <td>
+                    分类id
+                </td>
+                <td>
+                    分类名称
+                </td>
+                <td>
+                    分类商品
+                </td>
+                <td>
+                    分类描述
+                </td>
+                <td>
+                   操作
+                </td>
+            </tr>
+            <tr>
+                <td >
+                    <input type="checkbox" name="check">
+                </td>
+                <td>
+                    分类id
+                </td>
+                <td>
+                    分类名称
+                </td>
+                <td>
+                    分类商品
+                </td>
+                <td>
+                    分类描述
+                </td>
+                <td>
+                    <a href="#">修改|</a><a href="#">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td >
+                    <input type="checkbox" name="check">
+                </td>
+                <td>
+                    分类id
+                </td>
+                <td>
+                    分类名称
+                </td>
+                <td>
+                    分类商品
+                </td>
+                <td>
+                    分类描述
+                </td>
+                <td>
+                    <a href="#">修改|</a><a href="#">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td >
+                    <input type="checkbox" name="check">
+                </td>
+                <td>
+                    分类id
+                </td>
+                <td>
+                    分类名称
+                </td>
+                <td>
+                    分类商品
+                </td>
+                <td>
+                    分类描述
+                </td>
+                <td>
+                    <a href="#">修改|</a><a href="#">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td >
+                    <input type="checkbox" name="check">
+                </td>
+                <td>
+                    分类id
+                </td>
+                <td>
+                    分类名称
+                </td>
+                <td>
+                    分类商品
+                </td>
+                <td>
+                    分类描述
+                </td>
+                <td>
+                    <a href="#">修改|</a><a href="#">删除</a>
+                </td>
+            </tr>
+        </table>
+<div>
+    <input type="radio">男 <input type="radio">女 <br>
+    <select name="请选择" id="">
+        <option value="1" >11</option>
+        <option value="2">11</option>
+        <option value="3">11</option>
+    </select>
+</div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--
+          1.校验用户名 长度不能小于6位
+              1 确定实践    提交事件 onsubmit
+              2  事件触发函数
+              3  函数要去做一些校验
+
+-->
+    <style>
+        .qq{
+            height: 300px;
+            width: 300px;
+            border: 1px;
+            border-color: red;
+
+        }
+    </style>
+    <script>
+        function check() {
+            //
+            var input1=document.getElementById("user");
+            //密码
+            var input2=document.getElementById("2");
+            // 确认密码
+            var input3=document.getElementById("3");
+            //邮箱
+            var input4=document.getElementById("4");
+            if(input1.value.length>6){
+            }
+
+            else{
+                alert("对不起用户名太短了");
+                return false;
+            }
+          /*  if(input2.equals(input3)){
+                alert("校验成功");
+            }
+            else{
+                alert("两次密码不一致");
+                return false;
+            }*/
+          // 必须要点击value才行
+            if(/^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/.test(input4.value)) {
+                alert("校验成功");
+            }
+            else {
+                alert("失败");
+                return false;
+            }
+           return true;
+        }
+        function shoutip() {
+            var span=document.getElementById("span_user");
+            span.innerHTML="<font color='red' size='3'>用户名长度不能小于6位</font>";
+
+        }
+        /*
+        *
+        *
+        * */
+        function checkusename() {
+            //获取用户输入的内容
+            var v=document.getElementById("user").value;
+            var span=document.getElementById("span_user");
+            if(v.length<6) {
+
+                span.innerHTML="<font color='red' size='3'>短</font>";
+            }
+            else {
+                span.innerHTML="<font color='red' size='3'>可以</font>";
+            }
+            //对输入的内容进行校验
+            //
+        }
+
+    </script>
+</head>
+<body>
+
+<form action="../resource/img/注册优化.html" onsubmit="return check()">
+
+                    用户名 <input type="text" id="user" onblur="checkusename()" onfocus="shoutip()"> <span id="span_user"></span><br>
+                    密码 <input type="password" id="2"><br>
+                    确认密码 <input type="password" id="3"><br>
+                    邮箱 <input type="email" id="4"><br>
+                    <input type="submit" value="提交">
+
+</form>
+</body>
+</html>

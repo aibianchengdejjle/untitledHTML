@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../resource/img/jquery-1.8.3.js"></script>
+    <script>
+        function click1() {
+            //document.getElementById("span1").innerHTML="ljj傻逼";
+
+            var spanele=document.getElementById("span1");
+            //dom对象转换为jq对象
+            $(spanele).html("买手机")
+        }
+        $(function () {
+            //jq里面没有办法对js的对象进行更换
+            $("#btn").click(function () {
+                $("#span1").html("ljjSb");
+                //jq对象向dom对象转换  而且会把上面写的方法覆盖
+                $("#span1").get(0).innerHTML="呵呵呵哒";
+
+            })
+        })
+    </script>
+</head>
+<body>
+<input type="button" value="js" onclick="click1()">
+<input type="button" value="jq" id="btn"> <br>
+<span id="span1">梁家杰傻逼</span>
+</body>
+</html>

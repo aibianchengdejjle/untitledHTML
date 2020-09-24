@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        *  弱变量类型
+        * */
+        /*var i=1;
+        var j="ljjs";
+        //alert(j.length)
+        //向页面输出信息
+        document.write("梁家杰傻逼\n");
+
+        //向控制台输出
+        console.log("dawdad");*/
+        function ljj() {
+           var div= document.getElementById("1");
+           //div.innerHTML="<font color='red'>这里被替换掉了</font>"
+            div.innerText="<font color='red'>这里被替换掉了</font>"
+        }
+    </script>
+</head>
+<body>
+        <input type="button"  value="点击替换div" onclick="ljj()">
+        <div id="1">
+            这里的内容一会要被替换
+        </div>
+</body>
+</html>

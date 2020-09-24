@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #table{
+            height: 200px;
+        }
+    </style>
+    <script src="../resource/img/jquery-1.8.3.js"></script>
+    <script>
+        $(function () {
+            $("#selectOneToRight").click(function () {
+                $("#1 option:selected").appendTo("#2");
+            })
+            $("#selectAllToRight").click(function () {
+                $("#1 option").appendTo("#2");
+            })
+            // 直接选中下拉列表双击移动
+            $("#1 option").dblclick(function () {
+                $("#1 option:selected").appendTo("#2");
+            })
+        })
+
+    </script>
+</head>
+<body>
+        <table border="1px" width="200px" id="table">
+            <tr>
+                <td>
+                    <div style="float: left">
+                        <select name="select1" id="1" multiple>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                        </select> <br>
+                        <a href="#" style="padding-left: 20px;" id="selectOneToRight"> 1 </a> <br>
+                        <a href="#" style="padding-left: 20px;"id="selectAllToRight">  2 </a>
+                    </div>
+                    <div style="float: right">
+                        <select name="select2" id="2" multiple>
+                            <option value="">4</option>
+                            <option value="">5</option>
+                            <option value="">6</option>
+
+                        </select>
+                    </div>
+                </td>
+            </tr>
+        </table>
+</body>
+</html>

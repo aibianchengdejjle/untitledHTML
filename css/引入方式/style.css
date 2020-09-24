@@ -1,0 +1,13 @@
+.one{
+    color: aqua;
+}
+.title{
+    color: blue;
+}
+#one{
+    color: blueviolet;
+}
+/*
+
+        行内样式#id>类选择器.>元素选择器 还有一个是就近原则
+*/

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function hide() {
+
+            var img=document.getElementById("img1");
+            img.style.display="none";
+        }
+        function show() {
+
+            img.style.display="block";
+        }
+    </script>
+</head>
+<body >
+        <input type="button" value="弹出广告" onclick="show()">
+        <input type="button" value="取消广告" onclick="hide()"><br>
+        <img src="../resource/img/6.jpg" alt="" id="img1" style="display: none;">
+</body>
+</html>

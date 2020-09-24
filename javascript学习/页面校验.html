@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+        js中的常用事件
+        onfocus事件 获得焦点事件
+        onblur  失去焦点事件
+        onkeyup 按键抬起
+
+
+-->
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--
+        引入一个了外部js文件
+
+-->
+    <script src="regutils.js"></script>
+    <script>
+        function checkusename(){
+            var x=document.getElementById("user").value;
+            var span=document.getElementById("span_user");
+            if(x.length<6)
+            {
+                span.innerHTML="太短了";
+            }
+            else{
+                span.innerHTML="ok了";
+            }
+
+        }
+        function shoutip(spanid,msg) {
+            var i=document.getElementById(spanid);
+            i.innerHTML=msg;
+        }
+        /*
+        *   密码校验
+        */
+        function password() {
+            var pass=document.getElementById("2").value;
+            var span=document.getElementById("span_password");
+            if(pass.length<6)
+            {
+                span.innerHTML="<font color='red' size='3'>密码长度不能小于6位</font>"
+            }
+            else
+            {
+                span.innerHTML="<font color='red' size='3'>可用</font>"
+            }
+        }
+        //确认密码
+        function checkpassword() {
+            var pass1=document.getElementById("3").value;
+            var pass=document.getElementById("2").value;
+            var span=document.getElementById("span_cpass");
+
+            if(pass1==pass)
+            {
+                span.innerHTML="<font color='red' size='3'>密码一致</font>";
+            }
+            else{
+                span.innerHTML="";
+            }
+        }
+        function mail() {
+            var email=document.getElementById("4").value;
+            var span=document.getElementById("mail");
+            var flga=checkEmail(email);
+            if(flga)
+            {
+                span.innerHTML="<font color='red' size='3'>邮箱可用</font>"
+            }
+            else{
+                span.innerHTML="<font color='red' size='3'>邮箱不可用</font>"
+            }
+        }
+        function phone() {
+            var phone=document.getElementById("5").value;
+            var flag=checkPhone(phone);
+            var span=document.getElementById("phoneid");
+            if(flag){
+                span.innerHTML="<font color='red' size='3'>电话可用</font>"
+            }
+            else
+            {
+                span.innerHTML="<font color='red' size='3'>电话不可用</font>"
+            }
+        }
+        function check() {
+
+                return false;
+        }
+    </script>
+</head>
+<body>
+<form action="../resource/img/注册优化.html" onsubmit="return check()">
+
+    用户名 <input type="text" id="user" onblur="checkusename()" onfocus="shoutip('span_user','用户名不能小于6位')" onkeyup="checkusename()" > <span id="span_user"></span><br>
+    密码 <input type="password" id="2" onfocus="shoutip('span_password','密码必须复杂点')" onblur="password()" onkeyup="password()"> <span id="span_password"></span><br>
+    确认密码 <input type="password" id="3" onblur="checkpassword()"><span id="span_cpass"></span><br>
+    邮箱 <input type="email" id="4" onblur="mail()"><span id="mail"></span><br>
+    电话号码 <input type="text" id="5" onblur="phone()"><span id="phoneid"></span><br>
+    出生日期 <input type="date"><br>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../resource/img/jquery-1.8.3.js"></script>
+    <script>
+        $(function () {
+            var city=[["jjl","ljj"],["a","b","e"],["c","d"]];
+            $("#1").change(function () {
+                //可以用this来直接获取点击的值
+               // alert(this.value)
+               //先把2里面的东西给干掉
+                $("#2").empty();
+                //获取用户选择
+                var val=this.value;
+                //each来循环遍历的
+                $.each(city,function (i,n) {
+                    //寻找具体的省市
+                    if(val==i)
+                    //进入具体的省市
+                    {
+                        $.each(city[i],function (j,m) {
+                            var textNode = document.createTextNode(m);
+                            //7.创建option元素节点
+                            var opEle = document.createElement("option");
+                            //8.将城市文本节点添加到option元素节点中去
+                            $(opEle).append(textNode);
+                            //9.将option元素节点追加到第二个下拉列表中去
+                            $(opEle).appendTo("#2");
+                        })
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+<div>
+<select  id="1">
+    <option value="0">梁家杰</option>
+    <option value="1">梁家杰1</option>
+    <option value="2">梁家杰2</option>
+</select>
+<select  id="2">
+
+</select></div>
+</body>
+</html>

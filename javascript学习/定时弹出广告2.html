@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+            思路  先在boby函数中把图片的style 设置成none
+            先在boby中加载一个onload函数 并在script中写出这个函数在init函数中调用show 函数先将图片style改成block 这样图片就显示出来了
+            然后启动定时器 让用户观看几秒钟 然后在shou函数中调用clear函数 clear中把syle改成none就行。
+            setTimeout是过了多少秒在运行函数
+
+
+
+-->
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function init() {
+            setTimeout("show()",1000);
+
+        }
+        function show() {
+            var img=document.getElementById("img1");
+            img.style.display="block";
+            setTimeout("clear()",5000);
+        }
+        function clear() {
+            var img=document.getElementById("img1");
+            img.style.display="none";
+        }
+    </script>
+</head>
+<body onload="init()">
+<img src="../resource/img/8.jpg" alt="" style="display: none" id="img1" width="100%" height="100%">
+
+</body>
+</html>

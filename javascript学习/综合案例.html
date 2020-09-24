@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>综合案例</title>
+    <script>
+        function rightmove() {
+            var left=document.getElementById("left");
+            var options=left.options;
+            var right=document.getElementById("right");
+            for(var i=0;i<left.length;i++)
+            {
+                var option=options[i];
+                if(option.selected){
+                    right.appendChild(option);
+                }
+            }
+        }
+        function rightallmove() {
+            var left=document.getElementById("left");
+            var options=left.options;
+            var right=document.getElementById("right");
+            for(var i=options.length-1;i>-1;i--)
+            {
+                var option=options[i];
+                right.appendChild(option);
+            }
+        }
+    </script>
+</head>
+<body>
+        <table border="1px" width="400px">
+            <tr>
+                <td>分类名称</td>
+                <td><input type="text" value="手机数码"/></td>
+            </tr>
+            <tr>
+                <td>分类描述</td>
+                <td><input type="text" value="这里面都是手机数码"/></td>
+            </tr>
+            <tr>
+                <td>分类商品</td>
+                <td>
+                    <div style="float: left">
+                        <select name="" id="left" multiple="multiple">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                        <br>
+                        <a href="#" onclick="rightmove()">左移</a><br>
+                        <a href="#" onclick="rightallmove()">全移</a>
+                    </div>
+                    <div style="float: right">
+                        <select name="" id="right"multiple="multiple">
+                            <option value="">4</option>
+                            <option value="">5</option>
+                            <option value="">6</option>
+                        </select>
+                        <br>
+                        <a href="#">右移</a>
+                    </div>
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="提交">
+                </td>
+
+            </tr>
+        </table>
+</body>
+</html>

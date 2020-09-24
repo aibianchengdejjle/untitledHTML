@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--
+            定时器回顾 setInterval每隔多少秒执行一次该函数
+                      setTimeout() 是过了多少毫秒之后执行该函数
+
+
+-->
+    <script>
+        var timeid;
+        function a() {
+           timeid= setInterval("alert('梁家杰要不要换手机呢')",2000);
+        }
+        function b() {
+            clearInterval(timeid);
+        }
+    </script>
+</head>
+<body>
+        <input type="button" onclick="a()" value="开始">
+        <input type="button" onclick="b()" value="结束">
+</body>
+</html>

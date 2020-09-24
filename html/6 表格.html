@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格学习</title>
+</head>
+<body>
+<!--
+    表格
+    行 tr
+    列  td
+
+-->
+<table  border="1px"width="400px" align="center">
+    <tr>
+<!--    colspan 是跨列    -->
+        <td colspan="2">1-1</td>
+        <td>1-3</td>
+        <td>1-4</td>
+    </tr>
+    <tr>
+<!-- rowspan 是跨行       -->
+        <td >2-1</td>
+        <td colspan="2" rowspan="2">
+            <table border="1px"width="100%" bgcolor="#696969" align="centre">
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            </table>
+        </td>
+
+        <td>2-4</td>
+
+    </tr>
+    <tr>
+        <td rowspan="2">3-1</td>
+
+        <td>3-4</td>
+    </tr>
+    <tr>
+
+        <td>4-2</td>
+        <td>4-3</td>
+        <td>4-4</td>
+    </tr>
+</table>
+</body>
+</html>

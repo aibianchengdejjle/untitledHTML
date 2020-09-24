@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<body>
+<!--    form 是用来进行跳转的-->
+<!--    method
+        get 方式  默 认提交方式  会将参数放在网页地址上面    有大小限制
+        post 方式  会将参数封装在请求体中
+        action 是直接他跳转到一个地方
+        input type 指定输入项的类型
+              name  在表单提交的时候 当作参数的名称
+              password  密码
+              radio  单选按钮
+              checkbox  多选
+              file  上传文件
+              select  下拉  option选项
+              submit 提交
+              reset 重置按钮
+              hidden  隐藏域
+              placeholder    默认的提示信息
+             data 日期
+             number 数字
+             cols 宽度
+             rows 高度
+
+-->
+    <form action="../html/网站首页.html" method="get" >
+            <input type="hidden" value="faf" name="uid"/>
+            用户名：<input type="text"name="username" placeholder="请输入用户名"><br>
+            密码 ：<input  type="password"><br>
+            确认密码: <input type="password"><br>
+            邮箱 <input type="text"   /><br>
+            手机号码 <input type="tel"><br>
+            身份证 <input type="text"><br>
+            照片 <input type="file"><br>
+    <!--   radio 是 用来进行单项选择的     -->
+            性别 <input type="radio" name="sex"  />男
+                 <input type="radio"name="sex"  />女 <br>
+            爱好
+            <input type="checkbox">梁家杰傻逼
+            <input type="checkbox">傻逼梁家杰 <br>
+            籍贯 <select >
+                <option value="">请选择</option>
+                <option value="">湖北</option>
+                <option value="">内蒙古</option>
+                <option value="">请选择</option>
+            </select> <br>
+            出生日期
+        <input type="datetime-local  /"><br>
+            验证码 <input type="text"  /><br>
+            个人宣言
+            <textarea cols="40"  rows="4"></textarea> <br>
+            <input type="submit" value="提交">
+
+            <input type="reset" value="重置">
+    </form>
+</body>
+</html>

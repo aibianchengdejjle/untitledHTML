@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--
+        1 确定事件 文件加载完成的事件
+        2 函数要触发
+
+        3 函数里面要做的事情
+           1 打开定时器 并且要调用更换更改图片的函数
+           2
+        4 更改图片
+           1  回去要切换 何要更改的图片
+
+-->
+    <script>
+        var index=6;
+        function change() {
+
+            var img=document.getElementById("567");
+            // 计算当前要切换到第几章
+            var i=index%6+6;
+            //更换图片只需要更换该图片的源路劲就行了
+         img.src="../resource/img/"+i+".jpg";  // 1,.2,3
+            index=index+1
+        }
+        function init() {
+            setInterval("change()",2000)
+        }
+    </script>
+</head>
+<body onload="init()" >
+    <img src="../resource/img/6.jpg" width="100%" alt="" id="567">
+</body>
+</html>

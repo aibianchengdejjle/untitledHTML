@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var city=[["jjl","ljj"],["a","b"],["c","d"]];
+        function select() {
+            var pr=document.getElementById("sheng");
+            //将市里面的select获取到函数当中
+            var sele=document.getElementById("shi");
+           var citys=city[pr.value];
+           //把原本的市里面的选项清空
+           sele.options.length=0;
+           for(i=0;i<citys.length;i++)
+           {
+              var c=citys[i];
+              //创建选项节点
+              var option1=document.createElement("option");
+              //创建一个城市
+               var citynode=document.createTextNode(c);
+               //把城市放进节点里面
+               option1.appendChild(citynode);
+               //把节点放回到select当中去
+               sele.appendChild(option1);
+           }
+
+        }
+    </script>
+</head>
+<body>
+<select name="" id="sheng" onchange="select()">
+    <option value="0">梁家杰</option>
+    <option value="1">梁家杰sb</option>
+    <option value="2">梁家1</option>
+</select>
+<select name="" id="shi"></select>
+</body>
+</html>

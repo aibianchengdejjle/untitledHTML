@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+            思路  先在boby函数中把图片的style 设置成none
+            先在boby中加载一个onload函数 并在script中写出这个函数在init函数中调用show 函数先将图片style改成block 这样图片就显示出来了
+            然后启动定时器 让用户观看几秒钟 然后在shou函数中调用clear函数 clear中把syle改成none就行。
+            setTimeout是过了多少秒在运行函数
+
+
+
+-->
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../resource/img/jquery-1.8.3.js"></script>
+    <script>
+        $(function () {
+            //书写显示广告的定时操作
+           time= setInterval("show1()",2000);
+        })
+        //书写显示广告图片的函数
+        function show1() {
+            //$("#img1").show(1000);
+            $("#img1").fadeIn(1000);
+            //清楚显示图片定时操作
+           clearInterval(time);
+            //5.设置隐藏图片
+            time1= setInterval("hide1()",2000);
+        }
+        function hide1() {
+            $("#img1").fadeOut(1000);
+            //清楚隐藏图片的定时操作
+            clearInterval(time1);
+        }
+    </script>
+</head>
+<body onload="init()">
+<img src="../resource/img/8.jpg" alt="" style="display: none" id="img1" width="100%" height="100%">
+
+</body>
+</html>
