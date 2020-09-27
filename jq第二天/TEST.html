@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #table{
+            height: 200px;
+            color: black;
+        }
+    </style>
+    <script src="../resource/img/jquery-1.8.3.js"></script>
+    <script>
+        $(function () {
+            $("#left").click(function () {
+                $("#1 option:selected").appendTo("#2")
+            })
+            $("#allleft").click(function () {
+                $("#1 option").appendTo("#2")
+            })
+        })
+
+    </script>
+</head>
+<body>
+            <table border="3px" width="200px" id="table">
+                <tr>
+                    <td>
+                        <div style="float: left" id="3">
+                            <select name="left" id="1" multiple>
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                            </select><br>
+                            <a href="#" id="left">left</a><br>
+                            <a href="#" id="allleft">allleft</a><br>
+                        </div>
+                        <div style="float:right">
+                            <select name="" id="2" multiple>
+
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+</body>
+</html>
